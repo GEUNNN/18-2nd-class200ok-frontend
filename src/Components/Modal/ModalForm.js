@@ -10,6 +10,7 @@ class ModalForm extends Component {
     // const { id } = this.state;
     return (
       <>
+        {/* {console.log("type>>>", this.props.format.type)} */}
         {this.props.format.type === "openSoon" ? (
           <LecModal>
             <ModalLayout type={this.props.format.type} data={this.props.data}>
@@ -18,7 +19,11 @@ class ModalForm extends Component {
           </LecModal>
         ) : (
           <LecCreator>
-            <ModalLayout type={this.props.format.type} data={this.props.data}>
+            <ModalLayout
+              type={this.props.format.type}
+              data={this.props.data}
+              img={this.props.img}
+            >
               {this.props.format.type === "openSoon" && <BottomBox />}
             </ModalLayout>
           </LecCreator>

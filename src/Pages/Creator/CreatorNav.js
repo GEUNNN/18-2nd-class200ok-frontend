@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { withRouter,Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 const CreatorNav = props => {
   const [tap, setTap] = useState([]);
@@ -38,7 +38,9 @@ const CreatorNav = props => {
           <div className="headerIcon">101</div>
           <div className="headerText">수요조사 시작하기</div>
         </div>
-        <div className="headerExit"><Link to="/OpenSoon">나가기</Link></div>
+        <div className="headerExit">
+          <Link to="/">나가기</Link>
+        </div>
       </CreatorHeader>
       <CreatorNavBox>
         {CREATE_NAV_ARRAY.map((e, index) => {
@@ -112,6 +114,7 @@ const CreatorHeader = styled.div`
   display: flex;
   position: fixed;
   justify-content: space-between;
+  top: 0px;
   width: 100%;
   height: 72px;
   padding: 16px 24px;
@@ -165,18 +168,10 @@ const CreatorNavBox = styled.div`
   height: 100%;
   border-right: 1px solid rgb(228, 228, 228);
 
-  @media screen and (max-width: 1250px) {
+  @media screen and (max-width: 1305px) {
     display: none;
   }
 `;
-
-// const NavCreatorintroduce = styled.div`
-//   position: relative;
-//   width: 130%;
-//   top: 60px;
-//   left: 250px;
-//   padding: 32px 32px 60px;
-// `;
 
 const CreatorNavContent = styled.div`
   display: flex;

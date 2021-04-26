@@ -32,7 +32,6 @@ function Creatorintroduce() {
     addImgArray[id] = img;
     setImageList(addImgArray);
   };
-  // console.log(imageList);
   return (
     <CreatorIntroSection>
       <CreatorInfoHeader>
@@ -85,9 +84,12 @@ const CREATOR_BOX = [
 ];
 
 const CreatorIntroSection = styled.div`
-  width: 55%;
+  width: 75%;
   height: 100%;
   padding: 20px;
+  @media screen and (max-width: 1530px) {
+    width: 60%;
+  }
 `;
 
 const CreatorInfoHeader = styled.header`

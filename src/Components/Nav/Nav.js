@@ -50,7 +50,7 @@ export default function Nav() {
           </NavUpperBox>
           <NavLowerBox>
             <NavList>
-              <NavLink to="/open-soon">오픈 예정</NavLink>
+              <NavLink to="/">오픈 예정</NavLink>
             </NavList>
             <NavList>
               <Link to="/lecture">바로 수강</Link>
