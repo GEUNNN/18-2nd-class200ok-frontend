@@ -1,6 +1,9 @@
 /* eslint-disable */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { addModal } from "../../store/action/action";
+import { deleteModal } from "../../store/action/action";
 import styled from "styled-components";
 import createitem from "./../../Pages/Creator/create2.png";
 
@@ -9,6 +12,9 @@ function CreatorInfoContent(props) {
     file: "",
     imagePreviewUrl: "",
   });
+
+  const dispatch = useDispatch();
+
   const setUploadImg = event => {
     event.preventDefault();
     let reader = new FileReader();
@@ -20,8 +26,14 @@ function CreatorInfoContent(props) {
     props.handleAddImg(props.id, file);
   };
 
+  useEffect(() => {
+    imgPreview.imagePreviewUrl.length !== 0 &&
+      dispatch(addModal({ img: imgPreview.imagePreviewUrl, id: props.id }));
+  }, [imgPreview]);
+
   const removeState = () => {
     setImgPreview({ file: "", imagePreviewUrl: "" });
+    dispatch(deleteModal(imgPreview.imagePreviewUrl));
   };
 
   return (
@@ -72,8 +84,12 @@ const CreatorInfoItem = styled.div`
     height: 28vw;
     z-index: 2;
     cursor: pointer;
-    @media screen and (max-width: 1375px) {
+    @media screen and (max-width: 1595px) {
       width: 24vw;
+      height: 35vw;
+    }
+    @media screen and (max-width: 1530px) {
+      width: 20vw;
       height: 35vw;
     }
     img {
@@ -85,13 +101,22 @@ const CreatorInfoItem = styled.div`
     position: absolute;
     width: 16vw;
     height: 28vw;
-    @media screen and (max-width: 1375px) {
+    @media screen and (max-width: 1595px) {
       width: 24vw;
       height: 50vw;
     }
+    @media screen and (max-width: 1530px) {
+      width: 20vw;
+      height: 50vw;
+    }
   }
-  @media screen and (max-width: 1375px) {
+  @media screen and (max-width: 1595px) {
     width: 24vw;
+    height: 50vw;
+  }
+
+  @media screen and (max-width: 1530px) {
+    width: 20vw;
     height: 50vw;
   }
 `;

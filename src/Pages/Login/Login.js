@@ -7,7 +7,6 @@ import loginimage from "../../Pages/Login/login.png";
 
 function Login(props) {
   const { Kakao } = window;
-  console.log(props);
   //카카오 이메일 계정이 없는 경우 key_error 에러
   const handleKakao = response => {
     Kakao.Auth.login({

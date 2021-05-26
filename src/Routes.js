@@ -8,6 +8,7 @@ import OpenSoon from "./Pages/OpenSoon/OpenSoon";
 import Creatorinfo from "../src/Pages/Creator/Creatorinfo";
 import Creator from "../src/Pages/Creator/Creator";
 import Modal from "./Components/Modal/Modal";
+import ModalLayout from "./Components/Modal/ModalLayout";
 
 export class Routes extends Component {
   render() {
@@ -21,6 +22,7 @@ export class Routes extends Component {
           <Route exact path="/ModalLayout" component={Modal} />
           <Route exact path="/creatorinfo" component={Creatorinfo} />
           <Route exact path="/creator/:id" component={Creator} />
+          {/* <Route exact path="/modal" component={Modal} /> */}
         </Switch>
       </Router>
     );

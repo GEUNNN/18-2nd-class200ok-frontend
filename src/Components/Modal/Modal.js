@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { Component } from "react";
 import { withRouter } from "react-router";
-import styled from "styled-components";
+// import { useSelector } from "react-redux";
 import ModalForm from "./ModalForm";
 
 class Modal extends Component {
@@ -15,7 +15,7 @@ class Modal extends Component {
         .then(res => res.json())
         .then(res => {
           this.setState({ data: res.pending_lecture });
-          //this.setState({ data: res });
+          // this.setState({ data: res });
         });
     } else {
       fetch("/data/creatorPreview.json")
@@ -29,10 +29,6 @@ class Modal extends Component {
   }
 
   render() {
-<<<<<<< HEAD
-=======
-    console.log("Modal!!!!!", this.state.data);
->>>>>>> 3a1790f... ADD: 제품리스트 filter,sort 기능, 이미지 s3 모달연결 기능추가
     return (
       <>
         {Object.keys(this.state.data).length > 0 && (
@@ -43,6 +39,7 @@ class Modal extends Component {
                 : creatorApplyProps
             }
             data={this.state.data}
+            img={this.props.store.reducer}
             openModal={this.props.openModal}
           />
         )}
